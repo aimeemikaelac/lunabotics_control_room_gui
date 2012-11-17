@@ -1,0 +1,7 @@
+package controlroom.widgets;
+
+import controlroom.widget;
+
+public class LidarWidget extends widget {
+
+}

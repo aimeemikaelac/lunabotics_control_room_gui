@@ -1,0 +1,23 @@
+package controlroom.gui;
+
+import javax.swing.*;
+
+import controlroom.widgets.Widget;
+
+public class ControlRoomGUI extends JFrame {
+
+	public Widget wid = new Widget();
+	
+	public ControlRoomGUI() {
+		setTitle("Control Room");
+		setSize(800,600);
+		setLocation(0,0);
+	}
+	
+	public static void main(String[] args) {
+		JFrame f = new ControlRoomGUI();
+		f.setVisible(true);
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package controlroom.widgets;
+
+import javax.swing.JPanel;
+
+abstract public class Widget extends JPanel {
+	
+	protected int sizeX, sizeY;
+	
+	public Widget() {
+		sizeX = 100;
+		sizeY = 100;
+	}
+	
+}

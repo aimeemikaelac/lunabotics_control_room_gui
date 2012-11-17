@@ -1,0 +1,42 @@
+package controlroom.gui;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.*;
+
+import controlroom.widgets.Widget;
+
+public class ControlRoomGUI extends JFrame {
+	
+	private Widget lidarWidget = new Widget();
+	private Widget kinectWidget = new Widget();
+	
+	public ControlRoomGUI() {
+		// Frame Parameters
+		setTitle("Control Room");
+		setSize(800,600); 
+		setLocation(0,0); 
+	
+		addWindowListener(new WindowAdapter() {
+		  public void windowClosing(WindowEvent e) {
+			System.exit(0);
+		  } 
+		});
+		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(2,4));
+		panel.add(lidarWidget);
+		panel.add(kinectWidget);
+		add(panel, BorderLayout.SOUTH);
+	}
+	
+	public static void main(String[] args) {
+		JFrame f = new ControlRoomGUI();
+		f.show();
+
+	}
+
+}

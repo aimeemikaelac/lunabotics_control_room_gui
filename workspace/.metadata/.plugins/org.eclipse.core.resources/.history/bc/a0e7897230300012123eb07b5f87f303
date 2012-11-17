@@ -1,0 +1,37 @@
+package controlroom.gui;
+
+import java.awt.Container;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.*;
+
+import controlroom.widgets.Widget;
+
+public class ControlRoomGUI extends JFrame {
+	
+	public ControlRoomGUI() {
+		// Frame Parameters
+		setTitle("Control Room);
+		setSize(300,200); // default size is 0,0
+		setLocation(10,200); // default is 0,0 (top left corner)
+	
+		// Window Listeners
+		addWindowListener(new WindowAdapter() {
+		  public void windowClosing(WindowEvent e) {
+			System.exit(0);
+		  } //windowClosing
+		}); //addWindowLister
+	
+		// Add Panels
+		Container contentPane = getContentPane();
+		contentPane.add(new Widget());
+	}
+	
+	public static void main(String[] args) {
+		JFrame f = new ControlRoomGUI();
+		f.setVisible(true);
+
+	}
+
+}

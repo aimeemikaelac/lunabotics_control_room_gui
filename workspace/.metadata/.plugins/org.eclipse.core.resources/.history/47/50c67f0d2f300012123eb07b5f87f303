@@ -1,0 +1,24 @@
+package controlroom.widgets;
+
+import java.awt.*;
+
+import javax.swing.JPanel;
+
+public class Widget extends JPanel {
+	
+	protected int sizeX, sizeY;
+	
+	public Widget() {
+		sizeX = 100;
+		sizeY = 100;
+	}
+	
+	public void paintComponenet(Graphics g) {
+		super.paintComponent(g);
+		Font f = new Font("SansSerif", Font.BOLD, 14);
+		FontMetrics fm = g.getFontMetrics(f);
+		g.setFont(f);
+		g.drawString("Hello, ", 0, 0);
+	}
+	
+}

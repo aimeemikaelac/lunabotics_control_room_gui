@@ -1,0 +1,5 @@
+package controlroom.widgets;
+
+public class IMUWidget extends Widget {
+
+}

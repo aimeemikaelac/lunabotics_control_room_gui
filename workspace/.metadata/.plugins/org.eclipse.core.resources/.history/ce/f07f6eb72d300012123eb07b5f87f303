@@ -1,0 +1,5 @@
+package controlroom.widgets;
+
+abstract public class Widget {
+
+}

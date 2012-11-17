@@ -1,0 +1,24 @@
+package controlroom.widgets;
+
+import java.awt.*;
+
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+//TODO: This should be an abstract class.
+public class Widget extends JPanel {
+	
+	protected int sizeX, sizeY;
+	
+	public Widget() {
+		sizeX = 100;
+		sizeY = 175;
+		
+		setSize(sizeX, sizeY);
+		add(new JTextField("Empty Widget"));
+		setVisible(true);
+	}
+	
+	
+}

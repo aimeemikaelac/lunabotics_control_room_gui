@@ -1,0 +1,31 @@
+package controlroom.widgets;
+
+import java.awt.*;
+
+import javax.swing.JPanel;
+
+//TODO: This should be an abstract class.
+public class Widget extends JPanel {
+	
+	protected int sizeX, sizeY;
+	
+	public Widget() {
+		sizeX = 100;
+		sizeY = 100;
+	}
+	
+	public void paintComponenet(Graphics g) {
+		super.paintComponent(g);
+	    Font f = new Font("SansSerif", Font.BOLD, 14);
+	    Font fi = new Font("SansSerif", Font.BOLD + Font.ITALIC, 14);
+	    FontMetrics fm = g.getFontMetrics(f);
+	    FontMetrics fim = g.getFontMetrics(fi);
+	    int cx = 75; int cy = 100;
+	    g.setFont(f);
+	    g.drawString("Hello, ", cx, cy);
+	    cx += fm.stringWidth("Hello, ");
+	    g.setFont(fi);
+	    g.drawString("World!", cx, cy);
+	}
+	
+}

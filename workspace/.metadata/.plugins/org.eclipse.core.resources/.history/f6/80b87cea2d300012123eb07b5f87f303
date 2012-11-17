@@ -1,0 +1,7 @@
+package controlroom.widgets;
+
+abstract public class Widget {
+	protected int sizeX, sizeY;
+	
+	
+}
