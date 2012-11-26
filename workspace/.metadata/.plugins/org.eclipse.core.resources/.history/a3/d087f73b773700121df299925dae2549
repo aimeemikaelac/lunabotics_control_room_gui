@@ -1,0 +1,71 @@
+package controlroom.gui;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.*;
+
+import controlroom.widgets.IMUWidget;
+import controlroom.widgets.KinectWidget;
+import controlroom.widgets.LidarWidget;
+import controlroom.widgets.MapWidget;
+import controlroom.widgets.MotorWidget;
+import controlroom.widgets.Widget;
+import controlroom.widgets.XBoxControllerWidget;
+
+public class ControlRoomGUI extends JFrame {
+	
+	private Widget lidarWidget = new LidarWidget(300,300,"Lidar");
+	private Widget kinectWidget = new KinectWidget(300,300,"Kinect");
+	private Widget imuWidget = new IMUWidget(300,200,"IMU");
+	private Widget mapWidget = new MapWidget(900,600,"Maps");
+	private Widget motorWidget = new MotorWidget(300,200, "Motors");
+	private Widget xboxWidget = new  XBoxControllerWidget(300,200,"XBox Controller");
+	private Widget buttonWidget = new ButtonWidget(300,200,"Buttons");
+	private final int GUI_HEIGHT = 800;
+	private final int GUI_WIDTH = 1200;
+	
+	public ControlRoomGUI() {
+		// Frame Parameters
+		setTitle("Control Room");
+		setSize(GUI_WIDTH, GUI_HEIGHT); 
+		setLocation(0,0); 
+	
+		addWindowListener(new WindowAdapter() {
+		public void windowClosing(WindowEvent e) {
+			System.exit(0);
+		  } 
+		});
+		JPanel wholePanel = new JPanel(new BorderLayout());
+		JPanel westPanel = new JPanel(new GridLayout(3,1));
+		//panel.setLayout(new GridBagLayout());
+		westPanel.setPreferredSize(new Dimension(300, GUI_HEIGHT));
+		westPanel.add(lidarWidget);
+		westPanel.add(kinectWidget);
+		westPanel.add(imuWidget);
+		
+		JPanel mapPanel = new JPanel(new BorderLayout());
+		mapPanel.add(mapWidget);
+		
+		JPanel southPanel = new JPanel(new GridLayout(1,3));
+		southPanel.add(xboxWidget);
+		southPanel.add(motorWidget);
+		
+		wholePanel.add(westPanel, BorderLayout.WEST);
+		wholePanel.add(mapPanel, BorderLayout.CENTER);
+		
+		add(wholePanel);
+		//add(mapPanel);
+	}
+	
+	public static void main(String[] args) {
+		JFrame f = new ControlRoomGUI();
+		f.setVisible(true);
+
+	}
+
+}

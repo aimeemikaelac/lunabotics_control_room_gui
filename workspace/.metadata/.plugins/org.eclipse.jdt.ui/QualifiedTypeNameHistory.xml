@@ -14,4 +14,5 @@
 <fullyQualifiedTypeName name="controlroom.widgets.LidarWidget"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="java.awt.Graphics"/>
+<fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
 </qualifiedTypeNameHistroy>

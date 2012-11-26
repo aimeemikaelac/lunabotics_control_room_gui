@@ -1,6 +1,7 @@
 package controlroom.widgets;
 
 import java.awt.Graphics;
+import java.awt.GridBagLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,10 +16,11 @@ public abstract class Widget extends JPanel {
 		sizeX = x;
 		sizeY = y;
 		this.title = title;
-		
+		//setLayout(new GridBagLayout());
 		setSize(sizeX, sizeY);
+		setBounds(0,0,sizeX,sizeY);
 		add(new JLabel(title));
-		setVisible(true);
+		
 	}
 	
 	public void paintComponent(Graphics g) {
