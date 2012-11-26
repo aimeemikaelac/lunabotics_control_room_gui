@@ -1,0 +1,27 @@
+package controlroom.widgets;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class LidarWidget extends Widget {
+
+	public LidarWidget(int x, int y, String title) {
+		super(x, y, title);
+		
+	}
+	
+	public void paintComponent(Graphics g) {
+		g.setColor(Color.GRAY);
+		g.fillOval(20, 20, 260, 260);
+		
+		g.setColor(Color.BLACK);
+		g.drawLine(0, 0, 0, 300);
+		g.drawLine(0, 0, 300, 0);
+		g.drawLine(299, 0, 299, 299);
+		g.drawLine(0, 259, 259, 259);
+		g.drawLine(0, 269, 269, 269);
+		g.drawLine(0, 284, 284, 284);
+		
+	}
+
+}

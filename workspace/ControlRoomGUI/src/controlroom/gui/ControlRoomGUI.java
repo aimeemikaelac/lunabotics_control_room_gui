@@ -27,7 +27,7 @@ public class ControlRoomGUI extends JFrame {
 	private Widget motorWidget = new MotorWidget(300,200, "Motors");
 	private Widget xboxWidget = new  XBoxControllerWidget(300,200,"XBox Controller");
 	private Widget buttonWidget = new ButtonWidget(300,200,"Buttons");
-	private final int GUI_HEIGHT = 800;
+	private final int GUI_HEIGHT = 830;
 	private final int GUI_WIDTH = 1200;
 	
 	public ControlRoomGUI() {
@@ -41,14 +41,18 @@ public class ControlRoomGUI extends JFrame {
 			System.exit(0);
 		  } 
 		});
+		
 		JPanel wholePanel = new JPanel(new BorderLayout());
+		
 		JPanel westPanel = new JPanel(new GridLayout(2,1));
-		//panel.setLayout(new GridBagLayout());
 		westPanel.setPreferredSize(new Dimension(300, 600));
+		lidarWidget.setPreferredSize(new Dimension(300,300));
 		westPanel.add(lidarWidget);
+		kinectWidget.setPreferredSize(new Dimension(300,300));
 		westPanel.add(kinectWidget);
 		
 		JPanel mapPanel = new JPanel(new BorderLayout());
+		mapPanel.setPreferredSize(new Dimension(900,600));
 		mapPanel.add(mapWidget);
 		
 		JPanel southPanel = new JPanel(new GridLayout(1,4));
@@ -63,7 +67,6 @@ public class ControlRoomGUI extends JFrame {
 		wholePanel.add(mapPanel, BorderLayout.CENTER);
 		
 		add(wholePanel);
-		//add(mapPanel);
 	}
 	
 	public static void main(String[] args) {

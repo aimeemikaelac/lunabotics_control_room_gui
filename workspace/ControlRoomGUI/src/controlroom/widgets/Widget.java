@@ -1,5 +1,6 @@
 package controlroom.widgets;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridBagLayout;
 
@@ -24,6 +25,7 @@ public abstract class Widget extends JPanel {
 	}
 	
 	public void paintComponent(Graphics g) {
+		g.setColor(Color.LIGHT_GRAY);
 		g.fillRect(0, 20, sizeX, sizeY);
 	}
 	
