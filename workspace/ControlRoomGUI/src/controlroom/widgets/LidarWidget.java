@@ -12,6 +12,8 @@ public class LidarWidget extends Widget {
 	
 	public void paintComponent(Graphics g) {
 		
+		//This may be easiest to have a transmission of the image rather than just coordinates.
+		
 		g.setColor(Color.GRAY);
 		g.fillOval(20, 20, 260, 260);
 		

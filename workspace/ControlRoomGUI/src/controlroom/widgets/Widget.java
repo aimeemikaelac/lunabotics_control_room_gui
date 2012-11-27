@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 //TODO: This should be an abstract class.
-public abstract class Widget extends JPanel {
+public class Widget extends JPanel {
 	
 	protected int sizeX, sizeY;
 	protected String title;

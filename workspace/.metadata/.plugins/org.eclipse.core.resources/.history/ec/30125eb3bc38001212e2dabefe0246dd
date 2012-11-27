@@ -1,0 +1,78 @@
+package src.controlroom.gui;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.*;
+
+import controlroom.widgets.ButtonWidget;
+import controlroom.widgets.IMUWidget;
+import controlroom.widgets.KinectWidget;
+import controlroom.widgets.LidarWidget;
+import controlroom.widgets.MapWidget;
+import controlroom.widgets.MotorWidget;
+import controlroom.widgets.Widget;
+import controlroom.widgets.XBoxControllerWidget;
+
+public class ControlRoomGUI extends JFrame {
+	
+	private Widget lidarWidget = new LidarWidget(300,300,"Lidar");
+	private Widget kinectWidget = new KinectWidget(300,300,"Kinect");
+	private Widget imuWidget = new IMUWidget(300,200,"IMU");
+	private Widget mapWidget = new MapWidget(900,600,"Maps");
+	private Widget motorWidget = new MotorWidget(300,200, "Motors");
+	private Widget xboxWidget = new  XBoxControllerWidget(300,200,"XBox Controller");
+	private Widget buttonWidget = new ButtonWidget(300,200,"Buttons");
+	private final int GUI_HEIGHT = 830;
+	private final int GUI_WIDTH = 1200;
+	
+	public ControlRoomGUI() {
+		// Frame Parameters
+		setTitle("Control Room");
+		setSize(GUI_WIDTH, GUI_HEIGHT); 
+		setLocation(0,0); 
+	
+		addWindowListener(new WindowAdapter() {
+		public void windowClosing(WindowEvent e) {
+			System.exit(0);
+		  } 
+		});
+		
+		JPanel wholePanel = new JPanel(new BorderLayout());
+		
+		JPanel westPanel = new JPanel(new GridLayout(2,1));
+		westPanel.setPreferredSize(new Dimension(300, 600));
+		lidarWidget.setPreferredSize(new Dimension(300,300));
+		westPanel.add(lidarWidget);
+		kinectWidget.setPreferredSize(new Dimension(300,300));
+		westPanel.add(kinectWidget);
+		
+		JPanel mapPanel = new JPanel(new BorderLayout());
+		mapPanel.setPreferredSize(new Dimension(900,600));
+		mapPanel.add(mapWidget);
+		
+		JPanel southPanel = new JPanel(new GridLayout(1,4));
+		southPanel.setPreferredSize(new Dimension(GUI_WIDTH, 200));
+		southPanel.add(imuWidget);
+		southPanel.add(xboxWidget);
+		southPanel.add(motorWidget);
+		southPanel.add(buttonWidget);
+
+		wholePanel.add(southPanel, BorderLayout.SOUTH);
+		wholePanel.add(westPanel, BorderLayout.WEST);
+		wholePanel.add(mapPanel, BorderLayout.CENTER);
+		
+		add(wholePanel);
+	}
+	
+	public static void main(String[] args) {
+		JFrame f = new ControlRoomGUI();
+		f.setVisible(true);
+
+	}
+
+}

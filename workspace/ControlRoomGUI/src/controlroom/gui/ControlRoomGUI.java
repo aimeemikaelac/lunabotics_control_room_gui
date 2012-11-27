@@ -26,7 +26,7 @@ public class ControlRoomGUI extends JFrame {
 	private Widget mapWidget = new MapWidget(900,600,"Maps");
 	private Widget motorWidget = new MotorWidget(300,200, "Motors");
 	private Widget xboxWidget = new  XBoxControllerWidget(300,200,"XBox Controller");
-	private Widget buttonWidget = new ButtonWidget(300,200,"Buttons");
+	private ButtonWidget buttonWidget = new ButtonWidget(300,200,"Buttons");
 	private final int GUI_HEIGHT = 830;
 	private final int GUI_WIDTH = 1200;
 	
